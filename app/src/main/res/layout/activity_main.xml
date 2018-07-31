@@ -1,47 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v7.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="20dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
+    <Button
+        android:id="@+id/image_handle"
+        android:text="Java和ndk处理图片对比"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/image_gif"
+        android:text="高效gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-        <Button
-            android:id="@+id/origin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:onClick="originBitmap"
-            android:text="原图"/>
-
-        <Button
-            android:id="@+id/java_handle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:onClick="javaHandle"
-            android:text="Java处理"/>
-
-        <Button
-            android:id="@+id/ndk_handle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="ndkHandle"
-            android:padding="10dp"
-            android:text="NDK处理"/>
-
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="240px"
-        android:layout_height="300px"
-        android:layout_gravity="center_horizontal"/>
-
-</LinearLayout>
+</android.support.v7.widget.LinearLayoutCompat>

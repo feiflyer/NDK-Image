@@ -1,38 +1,33 @@
 package com.fast.flyer.ndk.image;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-private ImageView mImageView;
-private Bitmap mBitmap;
+    private Button mImageHandle, mImageGif;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mImageView = findViewById(R.id.image_view);
 
-        mBitmap = BitmapFactory.decodeResource(getResources(),R.drawable.liuyan);
+        mImageGif = findViewById(R.id.image_gif);
+        mImageHandle = findViewById(R.id.image_handle);
 
+        mImageGif.setOnClickListener(this);
+        mImageHandle.setOnClickListener(this);
     }
 
-    public void originBitmap(View view){
-        mImageView.setImageBitmap(mBitmap);
+    @Override
+    public void onClick(View v) {
+        if (v == mImageHandle) {
+            startActivity(new Intent(this, ImageActivity.class));
+        }else if(v == mImageGif){
+            startActivity(new Intent(this, GifActivity.class));
+        }
     }
-
-    public void javaHandle(View view){
-        mImageView.setImageBitmap(ImageUtils.changeBitmap(mBitmap));
-    }
-
-    public void ndkHandle(View view){
-        mImageView.setImageBitmap(ImageUtils.changeBitmapNDK(mBitmap));
-    }
-
 }
