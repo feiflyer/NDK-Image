@@ -18,3 +18,8 @@ target_link_libraries(
                        native-lib
 
                        ${log-lib} )
+
+
+#添加子目录,将会调用子目录中的CMakeLists.txt
+ADD_SUBDIRECTORY(src/main/cpp/giflib)
+
