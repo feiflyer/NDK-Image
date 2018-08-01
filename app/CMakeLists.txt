@@ -21,6 +21,9 @@ target_link_libraries(
 
 
 #添加子目录,将会调用子目录中的CMakeLists.txt
-ADD_SUBDIRECTORY(src/main/cpp/giflib)
-ADD_SUBDIRECTORY(src/main/cpp/webplib)
+#ADD_SUBDIRECTORY(src/main/cpp/giflib)
+#ADD_SUBDIRECTORY(src/main/cpp/webplib)
+
+ADD_SUBDIRECTORY(src/main/cpp/framesequence)
+
 
